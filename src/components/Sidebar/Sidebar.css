@@ -1,0 +1,98 @@
+/* Sidebar default styles */
+.sidebar {
+  width: 15%; /* Collapsed width */
+  height: 100vh;
+  background-color: #343a40; /* Static background color */
+  color: #fff;
+  position: fixed;
+  overflow: hidden;
+  transition: width 0.3s ease, background-color 0.3s ease; /* Smooth transition */
+  z-index: 1000; /* Ensure it stays on top */
+}
+
+.sidebar.collapsed {
+  width: 60px;
+}
+
+/* Sidebar expanded state (on hover or not collapsed) */
+.sidebar:hover {
+  width: 15%; /* Expanded width */
+  background-color: #343a40;
+  height: 100vh;
+  transition: width 0.5s ease;
+}
+
+/* Sidebar header */
+.sidebar-header {
+  padding: 13px;
+  text-align: center;
+  color: #fff;
+  white-space: nowrap; /* Prevent text wrapping */
+  border-bottom: 1px solid #495057;
+}
+
+/* Menu list styles */
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-list li {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  white-space: nowrap; /* Prevent wrapping */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Show ellipsis for truncated text */
+  border-bottom: 1px solid #495057;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.menu-list li:hover {
+  background-color: #495057; /* Highlight item on hover */
+}
+
+.menu-list li a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+}
+
+/* Submenu styles */
+.submenu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.submenu li {
+  padding: 10px; /* Match padding of main menu items */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-bottom: 1px solid #495057; /* Match separator lines */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submenu li:hover {
+  background-color: #495057; /* Same hover effect as main menu items */
+}
+
+.submenu li a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+}
+
+.submenu-item {
+  text-align: center;
+}

@@ -1,0 +1,42 @@
+.dashboard-container {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.main-layout {
+  margin-left: 15%; /* Matches expanded sidebar width */
+  transition: margin-left 0.3s ease, width 0.3s ease; /* Smooth transition for layout changes */
+  flex-grow: 1; /* Ensure content takes up remaining space */
+}
+
+.dashboard-container.collapsed .main-layout {
+  margin-left: 60px; /* Matches collapsed sidebar width */
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #f8f9fa;
+  position: fixed;
+  top: 0;
+  left: 15%; /* Matches expanded sidebar width */
+  width: calc(100% - 15%); /* Adjusted to fill remaining space */
+  z-index: 500;
+  transition: left 0.3s ease, width 0.3s ease; /* Smooth transition for header */
+}
+
+.dashboard-container.collapsed .header {
+  left: 60px; /* Matches collapsed sidebar width */
+  width: calc(100% - 60px); /* Adjusted width for collapsed state */
+}
+
+.main-content {
+  padding: 20px;
+  margin-top: 40px; /* Offset for fixed header */
+  width: 100%; /* Ensure content stretches fully */
+  background-color: #f1f1f1;
+  transition: margin-left 0.3s ease, width 0.3s ease; /* Smooth transition for content layout */
+  min-height: calc(100vh - 100px); /* Adjust for header and footer */
+}
